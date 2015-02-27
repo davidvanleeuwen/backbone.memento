@@ -138,11 +138,7 @@
     // MementoStack: push / pop model and collection states
     // ----------------------------
     var MementoStack = function(structure, config){
-      var attributeStack = this.attributeStack;
-
-      function initialize(){
-        attributeStack = [];
-      }
+      var attributeStack = this.attributeStack = [];
 
       this.push = function(attrs){
         attributeStack.push(attrs);
@@ -155,11 +151,9 @@
 
       this.rewind = function(){
         var oldAttrs = attributeStack[0];
-        initialize();
+        attributeStack = [];
         return oldAttrs;
       }
-
-      initialize();
     };
 
     Backbone.Memento = Memento;
