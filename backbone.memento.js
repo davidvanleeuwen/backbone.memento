@@ -25,7 +25,7 @@
       config = _.extend({ignore: []}, config);
 
       var serializer = new Serializer(structure, config);
-      var mementoStack = new MementoStack(structure, config);
+      var mementoStack = this.mementoStack = new MementoStack(structure, config);
 
       var restoreState = function (previousState, restoreConfig){
         if (!previousState){ return; }
