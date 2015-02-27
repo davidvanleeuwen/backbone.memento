@@ -138,7 +138,7 @@
     // MementoStack: push / pop model and collection states
     // ----------------------------
     var MementoStack = function(structure, config){
-      var attributeStack;
+      var attributeStack = this.attributeStack;
 
       function initialize(){
         attributeStack = [];
